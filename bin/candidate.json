@@ -1,0 +1,20 @@
+{
+	"candidate": {
+		"_id": "1",
+		"lastname": "snow",
+		"skills": ["quick",
+		"computer",
+		"communication"],
+		"address": "1031 clyde avenue santa clara ca 95054",
+		"dob": "1998-01-10",
+		"interests": ["baseball",
+		"outdoor"],
+		"firstname": "jon",
+		"bio": "I have worked for park. I would only work in day time.",
+		"availability": {
+			"from": "2015-03-03",
+			"to": "2015-06-02"
+		},
+		"phoneno": "7766678909"
+	}
+}

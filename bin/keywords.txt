@@ -1,0 +1,2 @@
+parking, outdoor
+parking, shift
