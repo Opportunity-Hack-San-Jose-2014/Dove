@@ -1,7 +1,5 @@
 package org.work2future.rest;
 
-import java.io.IOException;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -10,9 +8,6 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import org.apache.commons.exec.CommandLine;
-import org.apache.commons.exec.DefaultExecutor;
-import org.apache.commons.exec.ExecuteException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -160,7 +155,11 @@ public class VRestService {
 		try {
 			JSONParser parser = new JSONParser();
 			JSONObject obj = (JSONObject)parser.parse(str.toLowerCase());
-			
+			Object candidatesObj = obj.get("candidates");
+			if(candidatesObj instanceof JSONArray){
+				JSONArray arr = (JSONArray)candidatesObj;
+				obj = (JSONObject)arr.get(0);
+			}
 			MongoClient mongoClient = new MongoClient( "localhost" , 27017 );
 			DB db = mongoClient.getDB( "work2future" );
 			
@@ -248,29 +247,8 @@ public class VRestService {
 			responseObj.put("value", e.getMessage());
 			return responseObj.toJSONString();
 		}
-		
 		return finalObj.toJSONString();
 	}
-	
-    public void runScript(){
-        String sCommandString = "./jobranking.py -";
-        CommandLine oCmdLine = CommandLine.parse(sCommandString);
-        DefaultExecutor oDefaultExecutor = new DefaultExecutor();
-        oDefaultExecutor.setExitValue(0);
-        try {
-            int exit = oDefaultExecutor.execute(oCmdLine);
-        } catch (ExecuteException e) {
-            // TODO Auto-generated catch block
-            System.err.println("Execution failed.");
-            e.printStackTrace();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            System.err.println("permission denied.");
-            e.printStackTrace();
-        }
-    }
-
-    
 	
 	public static void main(String[] args) {
 		JSONObject obj = new JSONObject();

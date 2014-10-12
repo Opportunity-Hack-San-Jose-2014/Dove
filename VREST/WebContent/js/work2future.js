@@ -47,7 +47,7 @@
 	
 	$(document).delegate('#add_header', 'click', function()
 	{
-		$("#required").append(' <input type="text" id= "requiredskills" class="form-control" placeholder="communication"><br>');
+		$("#required").append(' <input type="text" id= "requiredskills" class="form-control requiredskills" placeholder="communication"><br>');
 		
 	});
 	
@@ -102,24 +102,36 @@
 	{
 		var s = "";
 		var jsonObj= { posts:[]};
+		var jobDateObj =[];
+		jobDateObj.push({
+			"from" : $(document).find("#from2").val(),
+			"to" : $(document).find("#to2").val(),
+		
+		});
+		var skillsObj= [];
+		var length = document.getElementsByClassName("requiredskills").length;
+		for(var i = 0; i< length; i++) {
+			var s = document.getElementsByClassName("requiredskills");
+			alert(s[i].value);
+			skillsObj[i] = s[i].value;
+		}
+		
 		jsonObj.posts.push({
-			"_id" : $(document).find("#jobtitle").val(),
+			"_id" : $(document).find("#jobphoneno").val(),
 			"jobname" : $(document).find("#jobtitle").val(),
 			"jobdescription" : $(document).find("#jobdescription").val(),
 			"phoneno" : $(document).find("#jobphoneno").val(),
 			"email" : $(document).find("#jobemail").val(),
 			"salary" : $(document).find("#salary").val(),
 			"jobaddress" : $(document).find("#jobaddress").val(),
-			"jobdate":[],
-			"from" : $(document).find("#from2").val(),
-			"to" : $(document).find("#to2").val(),
-			"skills":[]
+			"jobdate":jobDateObj,
+			//"from" : $(document).find("#from2").val(),
+			//"to" : $(document).find("#to2").val(),
+			"skills":skillsObj
 		});
 		s = JSON.stringify(jsonObj,undefined,2);
-		alert(s);
 		
-		
-		 $.ajax({ 
+		$.ajax({ 
              type: "POST",
              dataType: 'json',
 		 'contentType': 'application/json',
@@ -156,8 +168,8 @@
 	$(document).delegate('#jobrequest', 'click', function()
 	{
 		var s = "";
-		var jsonObj= { candidate:[]};
-		jsonObj.candidate.push({
+		var jsonObj= {candidates:[]};
+		jsonObj.candidates.push({
 			"_id" : $(document).find("#phoneno").val(),
 			"firstname" : $(document).find("#firstname").val(),
 			"lastname" : $(document).find("#lastname").val(),
