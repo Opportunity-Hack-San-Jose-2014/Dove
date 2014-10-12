@@ -10,7 +10,7 @@ import sys
 import urllib
 import json
 from pyswitch import Switch   
-
+import pygal
 
 myswitch = Switch()
 keywords= {}
@@ -67,6 +67,7 @@ def process(candidate, jobs):
 
     jobs_bio_data= [] 
     jobs_scores = {}
+    jobs_dscores = {}
 
     for job in jobs["jobs"]:
        address = data["candidate"]["address"]
@@ -78,7 +79,11 @@ def process(candidate, jobs):
    
        s_score = matching(data["candidate"]["interests"], normalize(job["skills"],keywords)) * 10
        s_score = 35 if i_score > 35 else i_score
-        
+       d_scores = []
+       d_scores.append(d_score) 
+       d_scores.append(i_score) 
+       d_scores.append(s_score) 
+       jobs_dscores[job["jobname"]] = d_scores
        jobs_scores[job["jobname"]]=d_score + i_score + s_score
        entrydata = []
        entrydata.append(job["jobname"]) 
@@ -95,9 +100,17 @@ def process(candidate, jobs):
     for hline in  hdoopf.readlines():
         title = hline.split(",")[0].translate(None, '(')
         score = hline.split(",")[-1].translate(None, ')')
+        jobs_dscores[job["jobname"]].append(float(score)) 
         jobs_scores[title] =  jobs_scores[title] + float(score)
         print title +": "+  str(jobs_scores[title])
-
+    lables = ["distance","interests","skills","profile"]
+    for jobscore in jobs_dscores:
+        radar_chart = pygal.Radar()
+        radar_chart.title = 'V8 benchmark results'
+        radar_chart.x_labels = lables
+        radar_chart.add(jobscore,jobs_dscores[jobscore])
+        radar_chart.render_to_file(jobscore+".avg")
+        
 def normalize(tags, keys):
     tag_n = {}
     for t in tags:
