@@ -1,0 +1,157 @@
+@CHARSET "UTF-8";
+/**
+ * @author Michael White
+ * @copyright Copyright (c) 2009 Michael White (http://getsprink.com/)
+ * @license http://getsprink.com/liquanium/license
+ * @category Sprink
+ * @package Liquanium
+ * @version $Id: primary.css 572 2009-12-31 16:37:33Z mwhite $
+ * @ln-enterprise
+ */
+
+/* These are the styles for the default form. */
+
+form.FormBuilder_Condensed {
+    font-family: 'Trebuchet MS';
+    display: inline-block;
+    text-align: left;
+}
+
+form.FormBuilder_Condensed div.form_field_div,
+form.FormBuilder_Condensed div.form_field_row,
+form.FormBuilder_Condensed div.question_container {
+    margin-top: 0;
+    padding-top: 0;
+	padding-bottom: 11px;
+    padding-top: 7px;
+    padding-left: 15px;
+    padding-right: 11px;
+    border-top: 1px #d4c175 solid;
+}
+
+form.FormBuilder_Condensed label,
+form.FormBuilder_Condensed div.form_field_name_div,
+form.FormBuilder_Condensed div.form_field_name,
+form.FormBuilder_Condensed div.question_container div.question {
+    color: #454545;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    line-height: 12px;
+	margin-left: -7px;
+    margin-bottom: 8px;
+    display: block;
+    font-weight: bold;
+}
+
+form.FormBuilder_Condensed div.form_field_div.parent,
+form.FormBuilder_Condensed div.form_field_row.parent,
+form.FormBuilder_Condensed div.question_container.parent {
+    padding-bottom: .75em;
+}
+
+form.FormBuilder_Condensed div.form_field_div.child,
+form.FormBuilder_Condensed div.form_field_row.child,
+form.FormBuilder_Condensed div.question_container.child {
+    border-top: none;
+    padding-top: 0.25em;
+    padding-bottom: .75em;
+}
+
+form.FormBuilder_Condensed div.form_field_div.last_child,
+form.FormBuilder_Condensed div.form_field_row.last_child,
+form.FormBuilder_Condensed div.question_container.last_child {
+    border-top: none;
+    padding-top: 0.25em;
+}
+
+/*
+form.FormBuilder_Condensed label:after,
+form.FormBuilder_Condensed div.form_field_name_div:after {
+    content: ":";
+}*/
+
+form.FormBuilder_Condensed input[type="text"],
+form.FormBuilder_Condensed input[type="password"] {
+    height: 14px;
+    width: 215px;
+    line-height: 12px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 0;
+    margin-right: 2px;
+    margin-top: -2px; /* Adjusts for the border size */
+    padding: 3px;
+    border: 1px solid #837A65;
+}
+
+form.FormBuilder_Condensed textarea {
+    height: 75px;
+    width: 275px;
+    line-height: 12px;
+    font-family: Verdana;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 0;
+    margin-right: 2px;
+    margin-top: 2px; /* Adjusts for the border size */
+    padding: 2px;
+    border: 1px solid #837A65;
+}
+
+form.FormBuilder_Condensed div.textarea {
+    height: 75px;
+    width: 275px;
+    margin-right: 2px;
+}
+
+form.FormBuilder_Condensed select {
+    margin: 0;
+    padding: 0;
+    height: 18px;
+    width: 215px;
+    margin-right: 2px;
+    font-size: 12px;
+    line-height: 12px;
+    border: 1px solid #837A65;
+}
+
+form.FormBuilder_Condensed button {
+    line-height: 12px;
+}
+
+form.FormBuilder_Condensed table.radio_set {
+	width: auto;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+form.FormBuilder_Condensed .readonly,
+form.FormBuilder_Condensed input[type="text"].readonly,
+form.FormBuilder_Condensed input[type="password"].readonly {
+    border: 1px solid #aaaaaa;
+    background-color: #dddddd;
+    color: #777777;
+}
+
+form.FormBuilder_Condensed h2 {
+    margin-bottom: 7px;
+}
+
+form.FormBuilder_Condensed p {
+    margin-top: 7px;
+}
+
+/* CUSTOM GENOME LOGIN FORM STYLES */
+#form_div_login_wrapper {
+    width: auto;
+    text-align: center;
+}
+
+#form_div_login {
+    text-align: left;
+    margin: auto;
+    display: inline-block;
+}

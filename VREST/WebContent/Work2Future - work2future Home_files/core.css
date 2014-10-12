@@ -1,0 +1,36 @@
+body
+{
+	margin:0px;
+	padding:0px;
+}
+
+/*** Wrapping clear ***/
+.clear{clear:both;}
+
+/*** Containers ***/
+/* General */
+.container_head{}
+.container_title{}
+.container_body{}
+
+/* Hide/Show Areas */
+.showhide_container{}
+.showhide_container .container_head{clear:both;}
+.showhide_container .container_title{}
+.container_show, .container_hide{float:right;margin-left:3px;margin-bottom:3px;}
+.showhide_container .container_body{clear:both;}
+
+/* Rounded Corners */
+.roundedcorner_container{margin-top:10px;margin-bottom:30px;}
+.roundedcorner_container .container_inner{margin-left:10px;margin-right:10px;}
+
+/* List Grid */
+.list_grid table {border-collapse: collapse;table-layout: fixed;width:95%;}
+.list_grid td, .list_grid th{padding: 0.5em;border: 1px solid #CCC;}
+.list_grid thead, .list_grid tfoot{background-color: #DDD;}
+.list_grid tr.rowodd{background-color: #FFF;}
+.list_grid tr.roweven{background-color: #F2F2F2;}
+.list_grid .sortcol{cursor: pointer;padding-right: 20px;background-repeat: no-repeat;background-position: right center;}
+.list_grid .sortasc {background-color: #DDFFAC;background-image: url(/images/core/support/up.gif);}
+.list_grid .sortdesc{background-color: #B9DDFF;background-image: url(/images/core/support/down.gif);}
+.list_grid .nosort {cursor: default;}

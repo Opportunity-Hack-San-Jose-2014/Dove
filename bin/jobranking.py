@@ -96,7 +96,7 @@ def process(candidate, jobs):
         title = hline.split(",")[0].translate(None, '(')
         score = hline.split(",")[-1].translate(None, ')')
         jobs_scores[title] =  jobs_scores[title] + float(score)
-        print  jobs_scores[title] 
+        print title +": "+  str(jobs_scores[title])
 
 def normalize(tags, keys):
     tag_n = {}
@@ -158,6 +158,8 @@ parser.add_option("-c", "--candidate", dest="profile", metavar="string",
 		  help="candidate profile restful api link")
 parser.add_option("-j", "--job", dest="job", metavar="string",
                   help="job restful api link")
+parser.add_option("-s", "--json", dest="json", metavar="string",
+                  help="the json format string")
 parser.add_option("-r", "--result", dest="result", metavar="string",
                   help="result callback restful api link")
 (options, args) = parser.parse_args()
@@ -165,6 +167,11 @@ parser.add_option("-r", "--result", dest="result", metavar="string",
 candidate=options.profile
 jobs=options.job
 callback=options.result
+jsonstring=options.json
+
+if not jsonstring: 
+     parser.print_help()
+     returnwithstatus(2, callback, "stage1 hostname is empty", "")
 
 if not candidate: 
      parser.print_help()

@@ -1,0 +1,80 @@
+body{background:#000}
+
+/* Blank Page Class */
+.blank_mode_message{position:static}
+
+/* Class for clearing admin / edit template content */
+.adminclear {clear:both}
+
+/* Group Management page elements */
+.group_headline{position:static; width:100%}
+.group_headline_title{ width:50px; font-size:25px; display:inline}
+
+.group_headline_links{display:inline; font-size:10px}
+.group_search_results_div{position:static}
+
+.group_search_results{position:static}
+
+/* Edit page elements */
+.edit_headline{position:static; width:100%}
+.edit_headline_title{ width:50px; font-size:25px; display:inline}
+
+.edit_headline_links{display:inline; font-size:10px}
+
+/* Search page elements */
+.search_headline{position:static; width:100%}
+.search_headline_title{ width:50px; font-size:25px; display:inline}
+
+.search_headline_links{display:inline; font-size:10px}
+
+/* Edit form elements */
+/*
+.form_field_div{position:static; width:100%; min-height:25px}
+.form_field_name_div{float:left; top:0px; left:0px;  width:155px; height:15px}
+
+.form_field_input_date_button{cursor:pointer; border:1px solid red}
+
+.form_field_input_div{float:left; top:0px; left:165px}
+
+.form_field_message_div{float:left; top:0px; left:0px;  width:100%; height:15px; color:red}
+
+.basic_form_div{border-width:1px 1px 1px 1px}
+
+.advanced_form_div{border-width:1px 1px 1px 1px}
+
+.buttons_form_div{border-width:1px 1px 1px 1px}
+
+.options_form_div{border-width:1px 1px 1px 1px}
+*/
+
+/* Standard Elements */
+#page_outer{width:800px; margin:auto; background:#fff; font-family:Arial,Verdana,SanSerif; font-size:10px}
+#page_head{height:150px; border:solid 1px black}
+#page_top_nav{border:solid 1px black}
+#page_content_top{height:1px}
+#page_side_nav{}
+#page_content{width:100%; padding:10px; min-height:400px}
+#page_foot{height:25px}
+#page_copyright{}
+
+/*
+#form_div_login {
+	margin-top: 30px;
+	width: auto;
+}
+
+#form_div_login form {
+	width: 250px;
+	margin: auto;
+}
+
+#form_div_login form .form_field_input_div {
+	float: right;
+}
+
+#form_div_login form .form_field_name_div {
+	width: 90px;
+}
+*/
+.search_results{font-size:12px;color:#777;font-weight:normal;}
+.error{color:#c00;font-size:12px;float:right;margin-right:200px;padding-top:25px;}
